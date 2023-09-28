@@ -14,7 +14,7 @@ def eliminacionGaussiana(A , b):
     while( i < len(A)):
         if(M[i][i] == 0):
             aux = True
-            break;
+            break
         else:
             for k in range( i + 1 , len(A)):
                 num = -M[k][i]
