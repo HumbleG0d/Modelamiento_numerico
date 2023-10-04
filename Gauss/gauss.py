@@ -7,6 +7,7 @@ def eliminacionGaussiana(A, b):
 
     print("Matriz Aumentada:\n")
     print("\n".join(["".join(["{:4}".format(item) for item in row]) for row in M]))
+    print("\n")
 
     i = 0
     aux = False
@@ -20,6 +21,16 @@ def eliminacionGaussiana(A, b):
                 num = -M[k][i]
                 for j in range(len(b) + 1):
                     M[k][j] = M[k][j] + num * (M[i][j] / M[i][i])
+
+                print(
+                    "\n".join(
+                        [
+                            "".join(["{:10.3f}".format(item) for item in row])
+                            for row in M
+                        ]
+                    )
+                )
+                print("\n")
         i = i + 1
 
     print("\nMatriz triangular")
@@ -59,12 +70,16 @@ def sustitucionRegresiva(U, b):
 
 
 A = [
-    [0.100 * 10**-3, 0.100 * 10**1],
-    [0.100 * 10**1, 0.100 * 10**1],
+    [1, 1, 1, 1],
+    [120, 200, 80, 120],
+    [-1, 1, 0, -1],
+    [0, 1, -3, 0],
 ]
 b = [
-    [0.100 * 10**1],
-    [0.300 * 10**1],
+    [14],
+    [2020],
+    [0],
+    [0],
 ]
 
 eliminacionGaussiana(A, b)
