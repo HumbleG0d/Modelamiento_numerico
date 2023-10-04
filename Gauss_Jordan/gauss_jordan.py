@@ -23,6 +23,14 @@ def gauss_jordan(A, b):
 
                 for k in range(n + 1):
                     M[j][k] = M[j][k] - ratio * M[i][k]
+                print(
+                    "\n".join(
+                        [
+                            "".join(["{:10.4f}".format(item) for item in row])
+                            for row in M
+                        ]
+                    )
+                )
 
     print("\nMatriz Triangular:")
     print("\n".join(["".join(["{:10.4f}".format(item) for item in row]) for row in M]))
@@ -37,12 +45,16 @@ def gauss_jordan(A, b):
 
 
 A = [
-    [0.100 * 10**-3, 0.100 * 10**1],
-    [0.100 * 10**1, 0.100 * 10**1],
+    [1, 1, 1, 1],
+    [120, 200, 80, 120],
+    [-1, 1, 0, -1],
+    [0, 1, -3, 0],
 ]
 b = [
-    [0.100 * 10**1],
-    [0.300 * 10**1],
+    [14],
+    [2020],
+    [0],
+    [0],
 ]
 
 
